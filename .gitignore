@@ -1,0 +1,6 @@
+node_modules
+logs
+.vscode
+test.ts
+lib
+index.html
