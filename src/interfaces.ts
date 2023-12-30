@@ -1,6 +1,6 @@
 export interface SearchItem {
-    kind: string;
-    etag: 'youtube#searchResult';
+    kind: 'youtube#searchResult';
+    etag: string;
     id: ItemKindChannel | ItemKindPlaylist | ItemKindVideo;
     snippet: Snippet;
 }
@@ -53,4 +53,10 @@ export interface SearchResult {
         resultsPerPage: number;
     };
     items: SearchItem[];
+}
+
+export interface ParsedSearchResult {
+    type: 'video' | 'playlist' | 'channel';
+    url: string;
+    snippet: Snippet;
 }
