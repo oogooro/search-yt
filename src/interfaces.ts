@@ -1,7 +1,7 @@
 export interface SearchItem {
     kind: string;
     etag: 'youtube#searchResult';
-    id: ItemKind | ItemKindPlaylist;
+    id: ItemKindChannel | ItemKindPlaylist | ItemKindVideo;
     snippet: Snippet;
 }
 
@@ -16,13 +16,18 @@ export interface Snippet {
     publishedTime: Date;
 }
 
-export interface ItemKind {
-    id: 'youtube#video' | 'youtube#channel';
-    channel: string;
+export interface ItemKindVideo {
+    kind: 'youtube#video';
+    videoId: string;
+}
+
+export interface ItemKindChannel {
+    kind: 'youtube#channel';
+    channelId: string;
 }
 
 export interface ItemKindPlaylist {
-    id: 'youtube#playlist';
+    kind: 'youtube#playlist';
     playlistId: string;
 }
 
